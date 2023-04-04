@@ -18,7 +18,7 @@ func NewUserHandler(storage *storage.Storage, userManager *service.Service) *Use
 }
 
 func (h *UserHandler) Create(c echo.Context) error {
-
+ // зачем эта структура ? 
 	var input struct {
 		ID       int    `json:"id"`
 		Name     string `json:"name"`
@@ -31,7 +31,7 @@ func (h *UserHandler) Create(c echo.Context) error {
 	if err != nil {
 		return err
 	}
-
+	
 	user := &model.User{
 		ID:      input.ID,
 		Name:    input.Name,
